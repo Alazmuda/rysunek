@@ -1,59 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>rysunek</title>
 </head>
+
 <body>
     <canvas id="myCanvas" width="800" height="500" style="border:1px solid #000000;"></canvas>
     <script>
-        //ziemia
         var c = document.getElementById("myCanvas");
         var ctx = c.getContext("2d");
-        ctx.moveTo(0, 400);
-        ctx.lineTo(2000, 400);
-        ctx.stroke();
 
-        //kola
+        //tło --------------------------------------------------------
         ctx.beginPath();
+        ctx.fillStyle = "#435334";
+        ctx.rect(0, 400, 2000, 400);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.fillStyle = "#212A3E";
+        ctx.rect(0, 0, 2000, 400);
+        ctx.closePath();
+        ctx.fill();
+
+        //grób -------------------------------------------------------
+        ctx.beginPath();
+        ctx.fillStyle = "gray";
+        ctx.roundRect(680, 330, 60, 70, [10, 10, 0, 0]);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.font = "20px serif";
+        ctx.strokeText("RIP", 695, 365);
+
+        ctx.beginPath();
+        ctx.fillStyle = "#3C2A21";
+        ctx.rect(680, 410, 60, 80);
+        ctx.closePath();
+        ctx.fill();
+
+
+        //kola------------------------------------------------------
+        ctx.beginPath();
+        ctx.fillStyle = "black";
         ctx.arc(150, 370, 30, 0, 2 * Math.PI);
         ctx.closePath();
         ctx.stroke();
         ctx.fill();
 
         ctx.beginPath();
+        ctx.fillStyle = "black";
         ctx.arc(500, 370, 30, 0, 2 * Math.PI);
         ctx.closePath();
         ctx.stroke();
         ctx.fill();
 
-        //swiatla
-        ctx.beginPath();
-        ctx.fillStyle = "yellow ";
-        ctx.roundRect(505, 273, 25, 20, [0,100,0,0]);
-        ctx.closePath();
-        ctx.fill();
 
-        //auto
+        //kolpaki ---------------------------------------------------
         ctx.beginPath();
-        ctx.fillStyle = "black";
-        ctx.roundRect(110, 200, 200, 150, [40,0,0,5]);
+        ctx.fillStyle = "#453c49";
+        ctx.arc(150, 370, 15, 0, 2 * Math.PI);
         ctx.closePath();
         ctx.fill();
 
         ctx.beginPath();
+        ctx.fillStyle = "#453c49";
+        ctx.arc(500, 370, 15, 0, 2 * Math.PI);
+        ctx.closePath();
+        ctx.fill();
+
+
+        //auto ------------------------------------------------------
+        ctx.beginPath();
         ctx.fillStyle = "black";
-        ctx.roundRect(310, 270, 230, 80, [0,50,5,0]);
+        ctx.roundRect(110, 200, 200, 150, [40, 0, 0, 5]);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.fillStyle = "black";
+        ctx.roundRect(310, 270, 230, 80, [0, 50, 5, 0]);
         ctx.closePath();
         ctx.stroke();
         ctx.fill();
-        
 
-        //szyby
-        ctx.beginPath(); 
-        ctx.fillStyle = "blue";
+        ctx.beginPath();
+        ctx.fillStyle = "#57375D";
+        ctx.roundRect(100, 345, 450, 20, [5, 5, 5, 5]);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.strokeStyle = "#57375D";
+        ctx.moveTo(310, 290);
+        ctx.lineTo(335, 290);
+        ctx.closePath();
+        ctx.stroke();
+
+
+        //swiatlo1 ---------------------------------------------------
+        ctx.beginPath();
+        ctx.fillStyle = "#C07F00";
+        ctx.roundRect(505, 273, 25, 20, [0, 100, 0, 0]);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.strokeStyle = "#C07F00";
+        ctx.moveTo(550, 300);
+        ctx.lineTo(570, 310);
+        ctx.closePath();
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.strokeStyle = "#C07F00";
+        ctx.moveTo(550, 280);
+        ctx.lineTo(575, 275);
+        ctx.closePath();
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.strokeStyle = "#C07F00";
+        ctx.moveTo(540, 260);
+        ctx.lineTo(550, 240);
+        ctx.closePath();
+        ctx.stroke();
+
+
+        //swiatlo2 ---------------------------------------------------
+        ctx.beginPath();
+        ctx.fillStyle = "#CD5C08";
+        ctx.rect(110, 310, 15, 15);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.strokeStyle = "#CD5C08";
+        ctx.moveTo(95, 300);
+        ctx.lineTo(80, 280);
+        ctx.closePath();
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.strokeStyle = "#CD5C08";
+        ctx.moveTo(90, 315);
+        ctx.lineTo(70, 315);
+        ctx.closePath();
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.strokeStyle = "#CD5C08";
+        ctx.moveTo(90, 335);
+        ctx.lineTo(73, 345);
+        ctx.closePath();
+        ctx.stroke();
+
+
+        //szyby --------------------------------------------------
+        ctx.beginPath();
+        ctx.fillStyle = "#001524";
         ctx.moveTo(310, 200);
         ctx.lineTo(430, 270);
         ctx.lineTo(310, 270);
@@ -61,25 +170,377 @@
         ctx.fill();
 
         ctx.beginPath();
-        ctx.fillStyle = "blue";
-        ctx.roundRect(140, 220, 150, 80, [5,5,5,5]);
+        ctx.fillStyle = "#001524";
+        ctx.roundRect(140, 220, 150, 80, [5, 5, 5, 5]);
         ctx.closePath();
         ctx.fill();
 
-        //krzyz
-        ctx.beginPath(); 
+
+        //krzyz -----------------------------------------------------
+        ctx.beginPath();
+        ctx.strokeStyle = "black";
         ctx.moveTo(490, 230);
         ctx.lineTo(490, 270);
         ctx.closePath();
         ctx.stroke();
 
-        ctx.beginPath(); 
+        ctx.beginPath();
+        ctx.strokeStyle = "black";
         ctx.moveTo(480, 245);
         ctx.lineTo(500, 245);
         ctx.closePath();
         ctx.stroke();
 
-        
+
+        ctx.beginPath();
+        ctx.strokeStyle = "black";
+        ctx.moveTo(710, 300);
+        ctx.lineTo(710, 330);
+        ctx.closePath();
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.strokeStyle = "black";
+        ctx.moveTo(700, 310);
+        ctx.lineTo(720, 310);
+        ctx.closePath();
+        ctx.stroke();
+
+
+        //chmura1 -------------------------------------------------
+        ctx.beginPath();
+        ctx.fillStyle = "#434242";
+        ctx.arc(170, 105, 30, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.fillStyle = "#434242";
+        ctx.arc(210, 105, 30, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.fillStyle = "#434242";
+        ctx.arc(250, 105, 30, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.fillStyle = "#434242";
+        ctx.arc(290, 95, 30, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.fillStyle = "#434242";
+        ctx.arc(260, 65, 30, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.fillStyle = "#434242";
+        ctx.arc(210, 65, 30, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.fillStyle = "#434242";
+        ctx.arc(160, 65, 30, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.fillStyle = "#434242";
+        ctx.arc(133, 85, 30, 0, Math.PI * 2);
+        ctx.fill();
+
+
+        //chmura2 ------------------------------------------------------
+        ctx.beginPath();
+        ctx.fillStyle = "#222222";
+        ctx.arc(400, 90, 17, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.fillStyle = "#222222";
+        ctx.arc(430, 95, 20, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.fillStyle = "#222222";
+        ctx.arc(460, 100, 25, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.fillStyle = "#222222";
+        ctx.arc(470, 55, 25, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.fillStyle = "#222222";
+        ctx.arc(430, 65, 25, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.fillStyle = "#222222";
+        ctx.arc(395, 70, 20, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.fillStyle = "#222222";
+        ctx.arc(500, 50, 25, 0, Math.PI * 2);
+        ctx.fill();
+
+
+        //chmura3 ------------------------------------------------------
+        ctx.beginPath();
+        ctx.fillStyle = "#434242";
+        ctx.arc(500, 105, 25, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.fillStyle = "#434242";
+        ctx.arc(540, 105, 30, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.fillStyle = "#434242";
+        ctx.arc(590, 105, 30, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.fillStyle = "#434242";
+        ctx.arc(620, 95, 25, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.fillStyle = "#434242";
+        ctx.arc(595, 65, 27, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.fillStyle = "#434242";
+        ctx.arc(550, 65, 30, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.fillStyle = "#434242";
+        ctx.arc(510, 65, 25, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.fillStyle = "#434242";
+        ctx.arc(480, 85, 20, 0, Math.PI * 2);
+        ctx.fill();
+
+
+        //slonce --------------------------------------------------------
+        ctx.beginPath();
+        ctx.fillStyle = "#C07F00";
+        ctx.arc(770, 25, 50, 0, 2 * Math.PI);
+        ctx.closePath();
+        ctx.stroke();
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.strokeStyle = "#C07F00";
+        ctx.moveTo(700, 20);
+        ctx.lineTo(650, 20);
+        ctx.closePath();
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.strokeStyle = "#C07F00";
+        ctx.moveTo(700, 60);
+        ctx.lineTo(660, 80);
+        ctx.closePath();
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.strokeStyle = "#C07F00";
+        ctx.moveTo(740, 90);
+        ctx.lineTo(720, 130);
+        ctx.closePath();
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.strokeStyle = "#C07F00";
+        ctx.moveTo(780, 100);
+        ctx.lineTo(780, 145);
+        ctx.closePath();
+        ctx.stroke();
+
+
+        //deszcz ------------------------------------------------------
+        ctx.beginPath();
+        ctx.strokeStyle = "#12486B";
+        ctx.moveTo(200, 120);
+        ctx.lineTo(200, 140);
+
+        ctx.moveTo(180, 140);
+        ctx.lineTo(180, 160);
+
+        ctx.moveTo(140, 150);
+        ctx.lineTo(140, 170);
+
+        ctx.moveTo(120, 120);
+        ctx.lineTo(120, 140);
+
+        ctx.moveTo(115, 170);
+        ctx.lineTo(115, 190);
+
+        ctx.moveTo(160, 170);
+        ctx.lineTo(160, 190);
+
+        ctx.moveTo(200, 170);
+        ctx.lineTo(200, 190);
+
+        ctx.moveTo(230, 180);
+        ctx.lineTo(230, 200);
+
+        ctx.moveTo(225, 145);
+        ctx.lineTo(225, 165);
+
+        ctx.moveTo(245, 135);
+        ctx.lineTo(245, 155);
+
+        ctx.moveTo(260, 170);
+        ctx.lineTo(260, 190);
+
+        ctx.moveTo(270, 140);
+        ctx.lineTo(270, 160);
+
+        ctx.moveTo(290, 170);
+        ctx.lineTo(290, 190);
+
+        ctx.moveTo(300, 130);
+        ctx.lineTo(300, 150);
+
+        ctx.moveTo(315, 155);
+        ctx.lineTo(315, 175);
+
+        ctx.moveTo(160, 125);
+        ctx.lineTo(160, 145);
+
+        //--------------------------------
+
+        ctx.moveTo(500, 170);
+        ctx.lineTo(500, 190);
+
+        ctx.moveTo(470, 140);
+        ctx.lineTo(470, 160);
+
+        ctx.moveTo(510, 140);
+        ctx.lineTo(510, 160);
+
+        ctx.moveTo(480, 180);
+        ctx.lineTo(480, 200);
+
+        ctx.moveTo(490, 120);
+        ctx.lineTo(490, 140);
+
+        ctx.moveTo(520, 190);
+        ctx.lineTo(520, 210);
+
+        ctx.moveTo(540, 130);
+        ctx.lineTo(540, 150);
+
+        ctx.moveTo(515, 230);
+        ctx.lineTo(515, 250);
+
+        ctx.moveTo(470, 220);
+        ctx.lineTo(470, 240);
+
+        ctx.moveTo(540, 170);
+        ctx.lineTo(540, 190);
+
+        ctx.moveTo(560, 190);
+        ctx.lineTo(560, 210);
+
+        ctx.moveTo(560, 145);
+        ctx.lineTo(560, 165);
+
+        ctx.moveTo(580, 160);
+        ctx.lineTo(580, 180);
+
+        ctx.moveTo(580, 220);
+        ctx.lineTo(580, 240);
+
+        ctx.moveTo(565, 240);
+        ctx.lineTo(565, 260);
+
+        ctx.moveTo(565, 280);
+        ctx.lineTo(565, 300);
+
+        ctx.moveTo(565, 340);
+        ctx.lineTo(565, 360);
+
+        ctx.moveTo(580, 370);
+        ctx.lineTo(580, 390);
+
+        ctx.moveTo(600, 240);
+        ctx.lineTo(600, 260);
+
+        ctx.moveTo(590, 290);
+        ctx.lineTo(590, 310);
+
+        ctx.moveTo(600, 130);
+        ctx.lineTo(600, 150);
+
+        ctx.moveTo(600, 180);
+        ctx.lineTo(600, 200);
+
+        ctx.moveTo(600, 340);
+        ctx.lineTo(600, 360);
+
+        ctx.moveTo(620, 140);
+        ctx.lineTo(620, 160);
+
+        ctx.moveTo(620, 200);
+        ctx.lineTo(620, 220);
+
+        ctx.moveTo(615, 270);
+        ctx.lineTo(615, 290);
+
+        ctx.moveTo(620, 315);
+        ctx.lineTo(620, 335);
+
+        ctx.moveTo(620, 370);
+        ctx.lineTo(620, 390);
+
+        ctx.moveTo(640, 125);
+        ctx.lineTo(640, 145);
+
+        ctx.moveTo(640, 180);
+        ctx.lineTo(640, 200);
+
+        ctx.moveTo(640, 250);
+        ctx.lineTo(640, 270);
+
+        ctx.moveTo(640, 335);
+        ctx.lineTo(640, 355);
+
+        ctx.moveTo(647, 290);
+        ctx.lineTo(647, 310);
+
+        ctx.moveTo(647, 375);
+        ctx.lineTo(647, 395);
+
+        ctx.moveTo(550, 375);
+        ctx.lineTo(550, 390);
+
+        //--------------------------------
+
+        ctx.moveTo(400, 135);
+        ctx.lineTo(400, 155);
+
+        ctx.moveTo(400, 190);
+        ctx.lineTo(400, 210);
+
+        ctx.moveTo(420, 120);
+        ctx.lineTo(420, 140);
+
+        ctx.moveTo(420, 170);
+        ctx.lineTo(420, 190);
+
+        ctx.moveTo(420, 220);
+        ctx.lineTo(420, 240);
+
+        ctx.moveTo(440, 235);
+        ctx.lineTo(440, 255);
+
+        ctx.moveTo(440, 135);
+        ctx.lineTo(440, 155);
+
+        ctx.moveTo(450, 180);
+        ctx.lineTo(450, 200);
+
+        ctx.moveTo(380, 150);
+        ctx.lineTo(380, 170);
+
+        ctx.moveTo(385, 110);
+        ctx.lineTo(385, 130);
+
+        ctx.moveTo(380, 200);
+        ctx.lineTo(380, 220);
+
+        ctx.closePath();
+        ctx.stroke();
     </script>
 </body>
+
 </html>
